@@ -1,0 +1,23 @@
+info:
+  component: Default Single Swagger Document Server for Smartcity services
+spring:
+  profiles: default
+server:
+  port: 8080
+documentation:
+  swagger:
+    config:
+      refreshrate: 60000
+    services:
+    - name: News
+      serviceUrl: http://localhost:8080/api-doc/News
+      swaggerServiceUrl: http://localhost:8082/api/v1/smartcity/api-doc
+      version: 2.0
+    - name: Event
+      serviceUrl: http://localhost:8080/api-doc/Event
+      swaggerServiceUrl: http://localhost:8083/api/v1/smartcity/api-doc
+      version: 2.0
+    - name: City
+      serviceUrl: http://localhost:8080/api-doc/City
+      swaggerServiceUrl: http://localhost:8084/api/v1/smartcity/city/api-doc
+      version: 2.0
