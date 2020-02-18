@@ -1,5 +1,5 @@
 info:
-  component: Default Single Swagger Document Server for Smartcity services
+  component: Single Swagger Document Server for multiple services
 spring:
   profiles: default
 server:
@@ -9,15 +9,15 @@ documentation:
     config:
       refreshrate: 60000
     services:
-    - name: News
-      serviceUrl: http://localhost:8080/api-doc/News
-      swaggerServiceUrl: http://localhost:8082/api/v1/smartcity/api-doc
+    - name: ${serviceName1}
+      serviceUrl: http://localhost:8080/api-doc/${serviceName1}
+      swaggerServiceUrl: ${swaggerDocumentationURIForService1}
       version: 2.0
-    - name: Event
-      serviceUrl: http://localhost:8080/api-doc/Event
-      swaggerServiceUrl: http://localhost:8083/api/v1/smartcity/api-doc
+    - name: ${serviceName2}
+      serviceUrl: http://localhost:8080/api-doc/${serviceName2}
+      swaggerServiceUrl: ${swaggerDocumentationURIForService2}
       version: 2.0
-    - name: City
-      serviceUrl: http://localhost:8080/api-doc/City
-      swaggerServiceUrl: http://localhost:8084/api/v1/smartcity/city/api-doc
+    - name: ${serviceName3}
+      serviceUrl: http://localhost:8080/api-doc/${serviceName3}
+      swaggerServiceUrl: ${swaggerDocumentationURIForService3}
       version: 2.0
